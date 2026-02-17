@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine’s!</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: pink;
+      font-family: Arial, sans-serif;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .envelope {
+      width: 90%;
+      max-width: 350px;
+      background: white;
+      padding: 40px 20px;
+      border-radius: 20px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .envelope-content {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .envelope h3 {
+      color: #d6336c;
+      font-size: 1.2rem;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 350px;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      animation: float 2s infinite alternate;
+      display: none;
+    }
+
+    .card.show {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-8px); }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="envelope" id="envelope" onclick="openLetter()">
+    <div class="envelope-content">💌</div>
+    <h3>Tap to open your letter!</h3>
+  </div>
+
+  <div class="card" id="card">
+    <h2>💖 Hi! I miss you! Sending love from afar 💖</h2>
+    <p>You are the best!</p>
+
+    <!-- Put photo.jpg in the same folder -->
+    <img src="images/VDayM.jpg" alt="Me photo">
+    <img src="images/Formal.jpg" alt="Cute photo">
+    <img src="images/VDayUs.jpg" alt="Cute Us">
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById('envelope').classList.add('hidden');
+      document.getElementById('card').classList.add('show');
+    }
+  </script>
+</body>
+</html>
